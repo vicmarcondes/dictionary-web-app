@@ -1,14 +1,25 @@
 @import '../../../variables.scss';
 
-input {
-  background-color: $primary-color;
-  border: none;
-  border-radius: 50px;
-  font-size: 1rem;
-  font-weight: 700;
-  padding: 16px 24px;
-  width: calc(100% - 48px);
+.input-area {
   margin-top: 24px;
+  position: relative;
 
+  img {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 4%;
+  }
   
+  input {
+    background-color: $primary-color;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 16px 24px;
+    width: calc(100% - 48px);  
+  }
 }
+
+

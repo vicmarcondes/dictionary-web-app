@@ -7,7 +7,6 @@ import { DictionaryService } from '../dictionary.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-
   fontSelected: string = "sans-serif";
 
   constructor(
@@ -20,6 +19,11 @@ export class HomeComponent implements OnInit {
 
   onSelectFont() {
     this.dictionaryService.font = this.fontSelected;
+  }
+
+  async search(searchContent: string) {
+    let response: any = await this.dictionaryService.searchWord(searchContent);
+    console.log('>>> response', response);
   }
 
 }

@@ -1,1 +1,4 @@
-<input type="text" id="input-dictionary">
+<div class="input-area">
+  <input type="text" id="input-dictionary" [(ngModel)]="searchContent" >
+  <img src="../../../assets/images/icon-search.svg" (click)="search()">
+</div>
