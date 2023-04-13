@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { DictionaryService } from '../dictionary.service';
 
 @Component({
@@ -7,13 +7,18 @@ import { DictionaryService } from '../dictionary.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  @ViewChild('audioPlayer') audioPlayer: any;
+  
   fontSelected: string = "sans-serif";
+  dictionaryData: any = {};
+
 
   constructor(
     private dictionaryService: DictionaryService
   ) { }
 
   ngOnInit(): void {
+    this.search('keyboard'); // delete this
   }
 
 
@@ -23,7 +28,17 @@ export class HomeComponent implements OnInit {
 
   async search(searchContent: string) {
     let response: any = await this.dictionaryService.searchWord(searchContent);
-    console.log('>>> response', response);
+    if(response) {
+      this.dictionaryData = response[0];
+      
+      let phoneticWithAudio = this.dictionaryData.phonetics.filter((phonetic: any) => phonetic.audio);      
+      this.audioPlayer.nativeElement.src = phoneticWithAudio[0].audio;
+    }
+  }
+
+  playPronunciation() {
+    this.audioPlayer.nativeElement.play();
+    
   }
 
 }

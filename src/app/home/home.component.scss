@@ -1,3 +1,5 @@
+@import '../../variables.scss';
+
 .main-container {
   padding: 5%;
 }
@@ -20,4 +22,33 @@ header {
     }
   }
 
+}
+
+main {
+  margin-top: 24px;
+
+  .pronunciation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    img {
+      width: 50px;
+    }
+
+    .word {
+      color: $font-color;
+      font-size: 2rem;
+      font-weight: 700;
+      line-height: 2.4375rem;
+    }
+
+    .phonetic {
+      margin-top: 8px;
+      color: $pink;
+      font-size: 1.125rem;
+      font-weight: 400;
+      line-height: 1.5rem;
+    }
+  }
 }

@@ -1,3 +1,7 @@
+<audio #audioPlayer>
+  <source [src]="" type="audio/mp3">
+</audio>
+
 <div class="main-container">
   <header>
     <img class="logo" src="../assets/images/logo.svg">
@@ -11,4 +15,14 @@
   </header>
 
   <app-input (onSearch)="search($event)" ></app-input>
+
+  <main>
+    <div class="pronunciation">
+      <div class="container">
+        <p class="word">{{dictionaryData.word}}</p>
+        <p class="phonetic">{{dictionaryData.phonetic}}</p>
+      </div>
+      <img (click)="playPronunciation()" src="../../assets/images/icon-play.svg">
+    </div>
+  </main>
 </div>
