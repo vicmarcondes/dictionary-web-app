@@ -1,1 +1,14 @@
-<p>home works!</p>
+<div class="main-container">
+  <header>
+    <img class="logo" src="../assets/images/logo.svg">
+    <div class="container">
+      <select [(ngModel)]="fontSelected" (change)="onSelectFont()">
+        <option value="sans-serif">Sans Serif</option>
+        <option value="serif">Serif</option>
+        <option value="monospace">Mono</option>
+      </select>
+    </div>
+  </header>
+
+  <app-input></app-input>
+</div>

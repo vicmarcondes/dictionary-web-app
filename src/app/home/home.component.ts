@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DictionaryService } from '../dictionary.service';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  fontSelected: string = "sans-serif";
+
+  constructor(
+    private dictionaryService: DictionaryService
+  ) { }
 
   ngOnInit(): void {
+  }
+
+
+  onSelectFont() {
+    this.dictionaryService.font = this.fontSelected;
   }
 
 }

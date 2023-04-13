@@ -1,0 +1,23 @@
+.main-container {
+  padding: 5%;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .container {
+    select {
+      border: none;
+      font-size: 1.125rem;
+      font-weight: 700;
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      background: url('../../assets/images/icon-arrow-down.svg') no-repeat center right #FFF;
+      width: 120px;
+    }
+  }
+
+}
