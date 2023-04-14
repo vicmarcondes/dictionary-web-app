@@ -1,5 +1,5 @@
 <audio #audioPlayer>
-  <source [src]="" type="audio/mp3">
+  <source type="audio/mp3">
 </audio>
 
 <div class="main-container">
@@ -23,6 +23,29 @@
         <p class="phonetic">{{dictionaryData.phonetic}}</p>
       </div>
       <img (click)="playPronunciation()" src="../../assets/images/icon-play.svg">
+    </div>
+    <div class="meanings">
+      <div class="meaning" *ngFor="let meaning of dictionaryData.meanings">
+        <div class="part-of-speech">
+          <span >{{meaning.partOfSpeech}}</span>
+        </div>
+        <h3>Meaning</h3>
+        <ul class="definitions">
+          <li *ngFor="let definition of meaning.definitions">
+            <span class="definition">
+              {{definition.definition}}
+            </span>
+
+            <span *ngIf="definition.example" class="example">
+              "{{definition.example}}"
+            </span>
+          </li>
+        </ul>
+        <div class="synonyms-container" *ngIf="meaning.synonyms.length">
+          <span class="title">Synonyms</span>
+          <span class="synonyms-list" *ngFor="let synonym of meaning.synonyms; let i = index">{{synonym}}<span *ngIf="i != (meaning.synonyms.length - 1)">; </span></span>
+        </div>
+      </div>
     </div>
   </main>
 </div>

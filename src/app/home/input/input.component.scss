@@ -8,7 +8,7 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    right: 4%;
+    right: 1.5rem;
   }
   
   input {
@@ -17,7 +17,7 @@
     border-radius: 50px;
     font-size: 1rem;
     font-weight: 700;
-    padding: 16px 24px;
+    padding: 1rem 1.5rem;
     width: calc(100% - 48px);  
   }
 }
