@@ -6,13 +6,15 @@ import { HomeComponent } from './home/home.component';
 import { FormsModule } from '@angular/forms';
 import { InputComponent } from './home/input/input.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ThemeDirective } from './theme.directive';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    InputComponent
+    InputComponent,
+    ThemeDirective
   ],
   imports: [
     BrowserModule,

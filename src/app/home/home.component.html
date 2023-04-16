@@ -2,9 +2,10 @@
   <source type="audio/mp3">
 </audio>
 
-<div class="main-container">
+<div class="main-container" appTheme [isDark]="isDarkMode">
   <header>
     <img class="logo" src="../assets/images/logo.svg">
+    <input type="checkbox" [(ngModel)]="isDarkMode" >
     <div class="container">
       <select [(ngModel)]="fontSelected" (change)="onSelectFont()">
         <option value="sans-serif">Sans Serif</option>

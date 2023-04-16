@@ -11,7 +11,7 @@ export class HomeComponent implements OnInit {
   
   fontSelected: string = "sans-serif";
   dictionaryData: any = {};
-
+  isDarkMode: boolean = false;
 
   constructor(
     private dictionaryService: DictionaryService

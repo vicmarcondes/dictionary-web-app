@@ -12,7 +12,7 @@
   }
   
   input {
-    background-color: $primary-color;
+    background-color: var(--primary-color);
     border: none;
     border-radius: 50px;
     font-size: 1rem;
