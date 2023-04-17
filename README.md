@@ -1,7 +1,6 @@
-# Frontend Mentor - Dictionary web app solution
+# Dicionário Web App
 
-This is a solution to the [Dictionary web app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/dictionary-web-app-h5wwnyuKFL). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+Esse é um projeto criado para treinar habilidades e aprender. Foi tirado do site Frontend Mentor, onde é possível encontrar vários exemplos de projetos para treinar suas skills no front-end.
 
-## Development server
+## Funcionalidades
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
