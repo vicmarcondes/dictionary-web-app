@@ -26,40 +26,49 @@
 
   <app-input (onSearch)="search($event)" ></app-input>
 
-  <main *ngIf="dictionaryData">
-    <div class="pronunciation">
-      <div class="container">
-        <p class="word">{{dictionaryData.word}}</p>
-        <p class="phonetic">{{dictionaryData.phonetic}}</p>
-      </div>
-      <img (click)="playPronunciation()" src="../../assets/images/icon-play.svg">
-    </div>
-    <div class="meanings">
-      <div class="meaning" *ngFor="let meaning of dictionaryData.meanings">
-        <div class="part-of-speech">
-          <span >{{meaning.partOfSpeech}}</span>
+  <main>
+    <div *ngIf="dictionaryData">
+      <div class="pronunciation">
+        <div class="container">
+          <p class="word">{{dictionaryData.word}}</p>
+          <p class="phonetic">{{dictionaryData.phonetic}}</p>
         </div>
-        <h3>Meaning</h3>
-        <ul class="definitions">
-          <li *ngFor="let definition of meaning.definitions">
-            <span class="definition">
-              {{definition.definition}}
-            </span>
-
-            <span *ngIf="definition.example" class="example">
-              "{{definition.example}}"
-            </span>
-          </li>
-        </ul>
-        <div class="synonyms-container" *ngIf="meaning.synonyms.length">
-          <span class="title">Synonyms</span>
-          <span class="synonyms-list" *ngFor="let synonym of meaning.synonyms; let i = index">{{synonym}}<span *ngIf="i != (meaning.synonyms.length - 1)">; </span></span>
+        <img (click)="playPronunciation()" src="../../assets/images/icon-play.svg">
+      </div>
+      <div class="meanings">
+        <div class="meaning" *ngFor="let meaning of dictionaryData.meanings">
+          <div class="part-of-speech">
+            <span >{{meaning.partOfSpeech}}</span>
+            <hr class="horizontal-line">
+          </div>
+          <h3>Meaning</h3>
+          <ul class="definitions">
+            <li *ngFor="let definition of meaning.definitions">
+              <span class="definition">
+                {{definition.definition}}
+              </span>
+  
+              <span *ngIf="definition.example" class="example">
+                "{{definition.example}}"
+              </span>
+            </li>
+          </ul>
+          <div class="synonyms-container" *ngIf="meaning.synonyms.length">
+            <span class="title">Synonyms</span>
+            <span class="synonyms-list" *ngFor="let synonym of meaning.synonyms; let i = index">{{synonym}}<span *ngIf="i != (meaning.synonyms.length - 1)">; </span></span>
+          </div>
         </div>
       </div>
+      <div class="source">
+        <p class="title">Source</p>
+        <a [href]="dictionaryData.sourceUrls[0]" class="url">{{dictionaryData.sourceUrls[0]}}</a>
+      </div>
     </div>
-    <div class="source">
-      <p class="title">Source</p>
-      <a [href]="dictionaryData.sourceUrls[0]" class="url">{{dictionaryData.sourceUrls[0]}}</a>
+    <div *ngIf="!dictionaryData && submitted" class="no-content">
+      <p class="emoji">😕</p>
+      <p class="title">No Definitions Found</p>
+      <p class="text">Sorry pal, we couldn't find definitions for the word you were looking for. You can try the search again at later time or head to the web instead.</p>
     </div>
   </main>
+  
 </div>

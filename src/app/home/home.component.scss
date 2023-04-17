@@ -3,7 +3,7 @@
 
 .main-container {
   padding: 1.5rem;
-  height: calc(100% - 3rem);
+  min-height: calc(100vh - 48px);
   background-color: var(--background);
 }
 
@@ -33,6 +33,7 @@ header {
       background: url('../../assets/images/icon-arrow-down.svg') no-repeat center right #FFF;
       background-color: var(--background);
       width: 120px;
+      cursor: pointer;
     }
 
       .switch-container {
@@ -109,6 +110,7 @@ main {
 
     img {
       width: 50px;
+      cursor: pointer;
     }
 
     .word {
@@ -132,6 +134,9 @@ main {
       margin-top: 32px;
 
       .part-of-speech {
+        display: flex;
+        align-items: center;
+
         span {
           color: var(--font-color);
           font-size: 1.125rem;
@@ -141,16 +146,12 @@ main {
           position: relative;
           display: inline-block;
           padding-right: 1rem;
-          width: 15%;
-          
-          &:after {
-            border-top: 1px solid #E9E9E9;;
-            content: "";
-            position: absolute;
-            top: 50%;
-            width: 70vw;
-            left: 100%;
-          }
+          width: 10%;
+        }
+
+        .horizontal-line {
+          width: 90%;
+          margin: 0;
         }
 
       }
@@ -240,5 +241,36 @@ main {
       font-weight: 400;
       font-size: .875rem;
     }
+  }
+
+  .no-content {
+    padding-top: 8.25rem;
+    height: calc(100vh - 316px);
+    .emoji {
+      font-size: 4rem;
+      margin-bottom: 2.75rem;
+      text-align: center;
+    }
+
+    .title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      text-align: center;
+      color: var(--font-color);
+      margin-bottom: 1.5rem;
+    }
+
+    .text {
+      font-size: 1.125rem;
+      color: var(--light-gray);
+      font-weight: 400;
+      text-align: center;
+    }
+  }
+}
+
+@media (min-width: 1280px) {
+  .main-container {
+    padding: 1.5rem 22rem;
   }
 }

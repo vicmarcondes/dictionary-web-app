@@ -12,13 +12,14 @@ export class HomeComponent implements OnInit {
   fontSelected: string = "sans-serif";
   dictionaryData: any;
   isDarkMode: boolean = false;
+  submitted: boolean = false;
 
   constructor(
     private dictionaryService: DictionaryService
   ) { }
 
   ngOnInit(): void {
-    // this.search('keyboard'); // delete this
+
   }
 
 
@@ -27,13 +28,19 @@ export class HomeComponent implements OnInit {
   }
 
   async search(searchContent: string) {
+
     let response: any = await this.dictionaryService.searchWord(searchContent);
     if(response) {
       this.dictionaryData = response[0];
       
       let phoneticWithAudio = this.dictionaryData.phonetics.filter((phonetic: any) => phonetic.audio);      
       this.audioPlayer.nativeElement.src = phoneticWithAudio[0].audio;
+    } else {
+      this.dictionaryData = null;
     }
+
+    this.submitted = true;
+
   }
 
   playPronunciation() {
