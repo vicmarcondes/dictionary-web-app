@@ -223,4 +223,22 @@ main {
 
     }
   }
+
+  .source {
+    margin-top: 1.5rem;
+
+    .title {
+      color: var(--light-gray);
+      text-decoration: underline;
+      font-size: .875rem;
+      font-weight: 400;
+      margin-bottom: .5rem;
+    }
+
+    .url {
+      color: var(--font-color);
+      font-weight: 400;
+      font-size: .875rem;
+    }
+  }
 }
