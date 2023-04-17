@@ -10,7 +10,7 @@ export class HomeComponent implements OnInit {
   @ViewChild('audioPlayer') audioPlayer: any;
   
   fontSelected: string = "sans-serif";
-  dictionaryData: any = {};
+  dictionaryData: any;
   isDarkMode: boolean = false;
 
   constructor(
@@ -18,7 +18,7 @@ export class HomeComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.search('keyboard'); // delete this
+    // this.search('keyboard'); // delete this
   }
 
 

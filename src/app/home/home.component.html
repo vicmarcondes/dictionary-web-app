@@ -5,19 +5,28 @@
 <div class="main-container" appTheme [isDark]="isDarkMode">
   <header>
     <img class="logo" src="../assets/images/logo.svg">
-    <input type="checkbox" [(ngModel)]="isDarkMode" >
-    <div class="container">
-      <select [(ngModel)]="fontSelected" (change)="onSelectFont()">
-        <option value="sans-serif">Sans Serif</option>
-        <option value="serif">Serif</option>
-        <option value="monospace">Mono</option>
-      </select>
+    <div class="container">   
+      <div class="select-container">
+        <select [(ngModel)]="fontSelected" (change)="onSelectFont()">
+          <option value="sans-serif">Sans Serif</option>
+          <option value="serif">Serif</option>
+          <option value="monospace">Mono</option>
+        </select>
+      </div>
+      <div class="switch-container">
+        <label class="switch">
+          <input type="checkbox" [(ngModel)]="isDarkMode" >
+          <span class="slider"></span>
+        </label>
+        <img src="../../assets/images/icon-moon.svg" *ngIf="!isDarkMode" class="moon" />
+        <img src="../../assets/images/icon-moon-dark.svg" *ngIf="isDarkMode" class="moon" />
+      </div>
     </div>
   </header>
 
   <app-input (onSearch)="search($event)" ></app-input>
 
-  <main>
+  <main *ngIf="dictionaryData">
     <div class="pronunciation">
       <div class="container">
         <p class="word">{{dictionaryData.word}}</p>
